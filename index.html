@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hamzat Latifat Omotoyosi — Design Portfolio</title>
+<meta name="description" content="Graphic design portfolio — Canva-built work across social, marketing, print, digital and branding." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --ink:#10141f;
+    --ink-soft:#4b5163;
+    --line:#e4e2dc;
+    --indigo:#4338ff;
+    --amber:#ffb020;
+    --coral:#ff6f59;
+    --mint:#1fb88a;
+    --card:#faf9f6;
+    --radius:14px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    letter-spacing:-0.02em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .brand{font-weight:700; font-size:1.05rem;}
+  .brand span{color:var(--indigo);}
+  .navlinks{display:flex; gap:28px; font-size:0.9rem; font-weight:500;}
+  .navlinks a{text-decoration:none; opacity:0.75; transition:opacity 0.2s;}
+  .navlinks a:hover{opacity:1;}
+  .navlinks a:focus-visible, a:focus-visible{outline:2px solid var(--indigo); outline-offset:3px; border-radius:3px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:96px 0 64px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.78rem; font-weight:500;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px; height:8px; border-radius:50%;
+    background:var(--mint);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.05;
+    margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(180deg, transparent 62%, var(--amber) 62%);
+  }
+  .hero p{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 22px;
+    border-radius:999px;
+    font-weight:600; font-size:0.92rem;
+    text-decoration:none;
+    transition:transform 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--ink); color:#fff;}
+  .btn-ghost{border:1.5px solid var(--line); color:var(--ink);}
+
+  /* Photo + scattered swatches */
+  .hero-visual{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:400px;
+  }
+  .avatar-frame{
+    position:relative;
+    width:260px; height:260px;
+    border-radius:28px;
+    overflow:hidden;
+    background:var(--ink);
+    box-shadow:0 24px 48px -18px rgba(16,20,31,0.35);
+    z-index:3;
+  }
+  .avatar-frame img{
+    width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;
+  }
+  .avatar-placeholder{
+    width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:4rem; font-weight:700;
+    background:linear-gradient(135deg, var(--indigo), #1b1f2a);
+  }
+  .swatch{
+    position:absolute;
+    border-radius:16px;
+    box-shadow:0 12px 24px -10px rgba(16,20,31,0.25);
+  }
+  .s1{width:88px; height:88px; background:var(--amber); top:8%; left:4%; transform:rotate(-12deg); z-index:2;}
+  .s2{width:64px; height:64px; background:var(--coral); bottom:10%; left:0%; transform:rotate(10deg); z-index:1; border-radius:50%;}
+  .s3{width:70px; height:70px; background:var(--mint); top:2%; right:2%; transform:rotate(16deg); z-index:1;}
+  .s4{width:56px; height:56px; background:var(--indigo); bottom:4%; right:6%; transform:rotate(-8deg); z-index:4; border-radius:50%;}
+
+  @media (prefers-reduced-motion: no-preference){
+    .swatch{ animation:drift 7s ease-in-out infinite; }
+    .s2{ animation-delay:0.8s; }
+    .s3{ animation-delay:1.6s; }
+    .s4{ animation-delay:2.4s; }
+  }
+  @keyframes drift{
+    0%,100%{ transform-origin:center; }
+    50%{ translate:0 -8px; }
+  }
+
+  /* SECTION LABELS */
+  .section{padding:72px 0;}
+  .section-head{
+    display:flex; align-items:baseline; gap:16px;
+    margin-bottom:36px;
+  }
+  .section-tag{
+    font-size:0.78rem; color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  .section h2{font-size:1.9rem;}
+  hr.rule{border:none; border-top:1px solid var(--line); margin:0 0 36px;}
+
+  /* ABOUT */
+  .about-grid{
+    display:grid; grid-template-columns:2fr 1fr; gap:48px;
+  }
+  .about-grid p{color:var(--ink-soft); font-size:1.02rem; margin-bottom:16px; max-width:60ch;}
+  .stat-list{display:flex; flex-direction:column; gap:20px;}
+  .stat{border-left:2px solid var(--indigo); padding-left:16px;}
+  .stat .num{font-family:'Space Grotesk'; font-size:1.6rem; font-weight:700; display:block;}
+  .stat .label{font-size:0.85rem; color:var(--ink-soft);}
+
+  /* CATEGORY GRID */
+  .cat-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:20px;
+  }
+  .cat-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent, var(--indigo));
+    border-radius:var(--radius);
+    padding:24px;
+  }
+  .cat-card h3{font-size:1.05rem; margin-bottom:4px;}
+  .cat-card .count{
+    font-family:'IBM Plex Mono'; font-size:0.75rem;
+    color:var(--ink-soft); margin-bottom:14px; display:block;
+  }
+  .cat-card ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
+  .cat-card li{
+    font-size:0.9rem; color:var(--ink-soft);
+    padding-left:16px; position:relative;
+  }
+  .cat-card li::before{
+    content:"";
+    position:absolute; left:0; top:8px;
+    width:5px; height:5px; border-radius:50%;
+    background:var(--accent, var(--indigo));
+  }
+
+  /* PROCESS */
+  .process-row{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+  }
+  .process-step{padding:20px 0; border-top:2px solid var(--ink);}
+  .process-step .step-num{font-family:'IBM Plex Mono'; font-size:0.8rem; color:var(--ink-soft); display:block; margin-bottom:8px;}
+  .process-step h4{font-size:1.02rem; margin-bottom:6px;}
+  .process-step p{font-size:0.88rem; color:var(--ink-soft);}
+
+  /* CONTACT */
+  .contact{
+    background:var(--ink);
+    color:#fff;
+    border-radius:24px;
+    padding:56px 48px;
+    text-align:center;
+  }
+  .contact h2{color:#fff; font-size:2rem; margin-bottom:12px;}
+  .contact p{color:rgba(255,255,255,0.7); margin-bottom:28px;}
+  .contact .btn-primary{background:#fff; color:var(--ink);}
+
+  footer{
+    padding:32px 0 48px;
+    text-align:center;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width: 760px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-visual{height:300px; order:-1;}
+    .about-grid{grid-template-columns:1fr;}
+    .process-row{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Latifat Hamzat<span>.</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow mono">Available for freelance work</div>
+      <h1>I design things people <em>actually enjoy</em> looking at.</h1>
+      <p>Graphic design student specialising in eye-catching social media graphics — built primarily in Canva, with an eye for clean layout, colour, and brand consistency.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#work">View my work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="swatch s1"></div>
+      <div class="swatch s2"></div>
+      <div class="swatch s3"></div>
+      <div class="swatch s4"></div>
+      <div class="avatar-frame">
+        <!-- Photo -->
+        <img src="latifat.png" alt="Latifat Hamzat Omotoyosi">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag mono">01 / About</span>
+      <h2>A little about me</h2>
+    </div>
+    <hr class="rule">
+    <div class="about-grid">
+      <div>
+        <p>I'm Latifat Hamzat Omotoyosi, a design student with a passion for creating scroll-stopping social media graphics. I love turning simple ideas into visuals that grab attention and stay on-brand, using Canva as my main design tool.</p>
+        <p>This portfolio was built as part of a design course assignment, showcasing the range of formats I can design and deliver quickly — from social posts to full brand kits.</p>
+      </div>
+      <div class="stat-list">
+        <div class="stat">
+          <span class="num">40+</span>
+          <span class="label">Design formats I work across</span>
+        </div>
+        <div class="stat">
+          <span class="num">5</span>
+          <span class="label">Core categories of design</span>
+        </div>
+        <div class="stat">
+          <span class="num">100%</span>
+          <span class="label">Built and delivered in Canva</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag mono">02 / Work</span>
+      <h2>What I can design</h2>
+    </div>
+    <hr class="rule">
+    <div class="cat-grid">
+
+      <div class="cat-card" style="--accent:var(--indigo)">
+        <h3>Social Media</h3>
+        <span class="count">10 formats</span>
+        <ul>
+          <li>Instagram posts &amp; stories</li>
+          <li>Reels covers &amp; YouTube thumbnails</li>
+          <li>Facebook &amp; LinkedIn banners</li>
+          <li>Twitter/X headers, Pinterest pins</li>
+        </ul>
+      </div>
+
+      <div class="cat-card" style="--accent:var(--coral)">
+        <h3>Marketing &amp; Business</h3>
+        <span class="count">10 formats</span>
+        <ul>
+          <li>Business cards &amp; flyers</li>
+          <li>Brochures &amp; posters</li>
+          <li>Logos &amp; letterheads</li>
+          <li>Pitch decks &amp; infographics</li>
+        </ul>
+      </div>
+
+      <div class="cat-card" style="--accent:var(--amber)">
+        <h3>Print &amp; Stationery</h3>
+        <span class="count">10 formats</span>
+        <ul>
+          <li>Resumes &amp; greeting cards</li>
+          <li>Invitations &amp; certificates</li>
+          <li>Stickers &amp; postcards</li>
+          <li>Planners &amp; bookmarks</li>
+        </ul>
+      </div>
+
+      <div class="cat-card" style="--accent:var(--mint)">
+        <h3>Digital &amp; Web</h3>
+        <span class="count">8 formats</span>
+        <ul>
+          <li>Website mockups</li>
+          <li>Email newsletters</li>
+          <li>Blog graphics &amp; e-books</li>
+          <li>Digital ads &amp; app icons</li>
+        </ul>
+      </div>
+
+      <div class="cat-card" style="--accent:var(--indigo)">
+        <h3>Branding &amp; Packaging</h3>
+        <span class="count">2 formats</span>
+        <ul>
+          <li>Product labels &amp; packaging mockups</li>
+          <li>Full brand kits</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag mono">03 / Process</span>
+      <h2>How I work</h2>
+    </div>
+    <hr class="rule">
+    <div class="process-row">
+      <div class="process-step">
+        <span class="step-num">01</span>
+        <h4>Brief</h4>
+        <p>Understand the goal, audience, and where the design will be used.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">02</span>
+        <h4>Sketch</h4>
+        <p>Explore layout and colour direction inside Canva.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">03</span>
+        <h4>Design</h4>
+        <p>Build the final piece with attention to type, spacing and brand fit.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-num">04</span>
+        <h4>Deliver</h4>
+        <p>Export in the right format and hand it off, ready to use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Let's work together</h2>
+      <p>Have a project in mind? I'd love to hear about it.</p>
+      <a class="btn btn-primary" href="mailto:omotoyosilatifat21@gmail.com">omotoyosilatifat21@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 Latifat Hamzat Omotoyosi. Built and hosted with GitHub Pages.
+  </div>
+</footer>
+
+</body>
+</html>
